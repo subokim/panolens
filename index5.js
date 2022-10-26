@@ -39,27 +39,18 @@ function angleToVector(ha, va, radius) {
   offset.add(vx); // add horizontal angle
   offset.add(vy); // add vertical angle
   offset.normalize();
-  console.log(offset);
 
   //multiply radius to unit vector
   offset.x = radius * Math.cos(phi) * Math.sin(theta);
   offset.y = radius * Math.sin(phi);
   offset.z = radius * Math.cos(phi) * Math.cos(theta);
-  console.log(offset);
 
   return offset;
 }
 
-function cameraRotate(ha, va) {
-  let targetPos = angleToVector(ha, va, 1);
-  // rotate offset back to
-  camera.position.x = - targetPos.x;
-  camera.position.y = - targetPos.y;
-  camera.position.z = - targetPos.z;
-  viewer.update();
-}
-
-cameraRotate(-90, - 5);
+//camera rotate
+let lookAtPos = angleToVector(200, 5, 2000);
+viewer.tweenControlCenter(lookAtPos);
 
 panorama.addEventListener( 'click', function(){
   //camera.getWorldDirection(v);
