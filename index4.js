@@ -1,4 +1,4 @@
-var panorama, panorama2, viewer, container, infospot;
+var panorama, panorama2, viewer, container, infospot, scene, renderer;
 
 //panorama = new PANOLENS.GoogleStreetviewPanorama('8VRQVMxTcxwTvaa7T7jktA');
 //panorama2 = new PANOLENS.GoogleStreetviewPanorama('EoRzuVjoP8ft_wF6A9pyxQ');
@@ -52,5 +52,12 @@ panorama2.addEventListener( 'enter', function(){
 panorama.link( panorama2, infospotPositions[0] );
 panorama2.link( panorama, infospotPositions[1] );
 viewer.add( panorama, panorama2 );
+
+camera = viewer.getCamera();
+scene = viewer.getScene();
+renderer = viewer.getRenderer();
+
+var gridHelper = new THREE.GridHelper( 20, 20 );
+scene.add( gridHelper );
 
 viewer.update();

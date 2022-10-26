@@ -1,4 +1,4 @@
-var panorama, panorama2, viewer, container, infospot, camera;
+var panorama, panorama2, viewer, container, infospot, camera, scene, renderer;
 
 container = document.querySelector( '#container' );
 
@@ -67,6 +67,12 @@ viewer = new PANOLENS.Viewer( { container: container } );
 viewer.add( panorama, panorama2 );
 
 camera = viewer.getCamera();
+scene = viewer.getScene();
+renderer = viewer.getRenderer();
+
+var gridHelper = new THREE.GridHelper( 20, 20 );
+scene.add( gridHelper );
+
 cameraRotate(40,0);
 
 viewer.addUpdateCallback(function(){  
