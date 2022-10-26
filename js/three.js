@@ -45824,7 +45824,7 @@
 
 		} );
 
-		var geometry = new SphereBufferGeometry( 1, 32, 16 );
+		var geometry = new SphereBufferGeometry( 1, 4, 2 );
 
 		Mesh.call( this, geometry, material );
 
