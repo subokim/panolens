@@ -3,8 +3,8 @@ var panorama, viewer, scene, camera;
 // Get Google Map API Key - https://developers.google.com/maps/documentation/javascript/get-api-key
 //panorama = new PANOLENS.GoogleStreetviewPanorama( 'JmSoPsBPhqWvaBmOqfFzgA', 0 );
 //,'AIzaSyAP7psgb_3x6cGqMDSQETHk7qZ7fCBYy0I'
-//panorama = new PANOLENS.GoogleStreetviewPanorama('MbYbdJhoZNcXA3Fo5d3wUA');
-panorama = new PANOLENS.ImagePanorama( './asset/pano-vr2.jpg' );
+panorama = new PANOLENS.GoogleStreetviewPanorama('MbYbdJhoZNcXA3Fo5d3wUA');
+//panorama = new PANOLENS.ImagePanorama( './asset/pano-vr2.jpg' );
 
 viewer = new PANOLENS.Viewer( { cameraFov : 60 } );
 viewer.add( panorama );

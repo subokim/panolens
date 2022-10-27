@@ -1,8 +1,5 @@
 var panorama, panorama2, viewer, container, infospot, scene, renderer;
 
-//panorama = new PANOLENS.GoogleStreetviewPanorama('8VRQVMxTcxwTvaa7T7jktA');
-//panorama2 = new PANOLENS.GoogleStreetviewPanorama('EoRzuVjoP8ft_wF6A9pyxQ');
-
 function angleToVector(ha, va, radius) {
   //make unit vector(x,y,z)
   let offset = new THREE.Vector3();
@@ -27,24 +24,27 @@ function angleToVector(ha, va, radius) {
   return offset;
 }
 
-let infoPos1 = angleToVector(80, 0, 3000);
-let infoPos2 = angleToVector(87, 2, 4000);
-let lookPos1 = angleToVector(80, 0, 3000);
-let lookPos2 = angleToVector(45, 0, 3000);
+// set objects' positions
+let infoPos1 = angleToVector(180, 2, 4000);
+let infoPos2 = angleToVector(90, 0, 4000);
+let lookPos1 = angleToVector(180, 0, 4000);
+let lookPos2 = angleToVector(90, 0, 4000);
 
 var infospotPositions = [infoPos1, infoPos2];
 var lookAtPositions = [lookPos1, lookPos2];
 
 container = document.querySelector( '#container' );
 
-panorama = new PANOLENS.ImagePanorama( './asset/pano-vr1.jpg' );
+//panorama = new PANOLENS.GoogleStreetviewPanorama('8VRQVMxTcxwTvaa7T7jktA');
+panorama = new PANOLENS.ImagePanorama( './asset/road-vr2.jpg' );
 viewer = new PANOLENS.Viewer( { output: 'console', container: container } );
 
 panorama.addEventListener( 'enter-fade-start', function(){
   viewer.tweenControlCenter( lookAtPositions[0], 0 );
 });
 
-panorama2 = new PANOLENS.ImagePanorama( './asset/pano-vr4.jpg' );
+//panorama2 = new PANOLENS.GoogleStreetviewPanorama('EoRzuVjoP8ft_wF6A9pyxQ');
+panorama2 = new PANOLENS.ImagePanorama( './asset/road-vr3.jpg' );
 panorama2.addEventListener( 'enter', function(){
   viewer.tweenControlCenter( lookAtPositions[1], 0 );
 });
