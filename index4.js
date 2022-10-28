@@ -12,7 +12,7 @@ var lookAtPositions = [lookPos1, lookPos2];
 container = document.querySelector( '#container' );
 
 //panorama = new PANOLENS.GoogleStreetviewPanorama('8VRQVMxTcxwTvaa7T7jktA');
-panorama = new PANOLENS.ImagePanorama( './asset/road-vr2.jpg' );
+panorama = new PANOLENS.ImagePanorama( './asset/road_vr2.jpeg' );
 viewer = new PANOLENS.Viewer( { output: 'console', container: container } );
 
 panorama.addEventListener( 'enter-fade-start', function(){
@@ -20,7 +20,7 @@ panorama.addEventListener( 'enter-fade-start', function(){
 });
 
 //panorama2 = new PANOLENS.GoogleStreetviewPanorama('EoRzuVjoP8ft_wF6A9pyxQ');
-panorama2 = new PANOLENS.ImagePanorama( './asset/road-vr3.jpg' );
+panorama2 = new PANOLENS.ImagePanorama( './asset/road_vr3.jpg' );
 panorama2.addEventListener( 'enter', function(){
   viewer.tweenControlCenter( lookAtPositions[1], 0 );
 });
