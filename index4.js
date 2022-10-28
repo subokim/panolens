@@ -1,34 +1,10 @@
 var panorama, panorama2, viewer, container, infospot, scene, renderer;
 
-function angleToVector(ha, va, radius) {
-  //make unit vector(x,y,z)
-  let offset = new THREE.Vector3();
-  let theta = THREE.Math.degToRad(ha); //horizontal
-  let phi = THREE.Math.degToRad(va); //vertical
-
-  let vz = new THREE.Vector3(0,0,1); // start point
-  let vx = new THREE.Vector3(Math.tan(theta),0,0);
-  let vs = Math.sqrt( Math.tan(theta) * Math.tan(theta) + 1); //slop length by x and z;
-  let vy = new THREE.Vector3(0, Math.tan(phi) * vs ,0);
-
-  offset.add(vz); //start point
-  offset.add(vx); // add horizontal angle
-  offset.add(vy); // add vertical angle
-  offset.normalize();
-
-  //multiply radius to unit vector
-  offset.x = radius * Math.cos(phi) * Math.sin(theta);
-  offset.y = radius * Math.sin(phi);
-  offset.z = radius * Math.cos(phi) * Math.cos(theta);
-
-  return offset;
-}
-
 // set objects' positions
-let infoPos1 = angleToVector(180, 2, 4000);
-let infoPos2 = angleToVector(90, 0, 4000);
-let lookPos1 = angleToVector(180, 0, 4000);
-let lookPos2 = angleToVector(90, 0, 4000);
+let infoPos1 = getVectorFromAngle(180, 2, 4000);
+let infoPos2 = getVectorFromAngle(90, 0, 4000);
+let lookPos1 = getVectorFromAngle(180, 0, 4000);
+let lookPos2 = getVectorFromAngle(90, 0, 4000);
 
 var infospotPositions = [infoPos1, infoPos2];
 var lookAtPositions = [lookPos1, lookPos2];
@@ -57,7 +33,7 @@ camera = viewer.getCamera();
 scene = viewer.getScene();
 renderer = viewer.getRenderer();
 
-var gridHelper = new THREE.GridHelper( 20, 20 );
+var gridHelper = new THREE.GridHelper( 20, 20, '#adff2f', '#ff7f50' );
 scene.add( gridHelper );
 
 viewer.update();
