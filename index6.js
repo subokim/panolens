@@ -9,7 +9,7 @@ panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
 var targetPos = getVectorFromAngle(95, 0, 4000)
 infospot = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
 infospot.position.copy(targetPos) ;
-infospot.addHoverElement( document.getElementById( 'desc-container' ), 200 );
+infospot.addHoverElement( document.getElementById( 'desc-container' ), 260 );
 
 panorama.add(infospot);
 
