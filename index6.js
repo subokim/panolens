@@ -4,7 +4,14 @@ var panorama, viewer, scene, camera;
 //panorama = new PANOLENS.GoogleStreetviewPanorama( 'JmSoPsBPhqWvaBmOqfFzgA', 0 );
 //,'AIzaSyAP7psgb_3x6cGqMDSQETHk7qZ7fCBYy0I'
 //panorama = new PANOLENS.GoogleStreetviewPanorama('MbYbdJhoZNcXA3Fo5d3wUA');
-panorama = new PANOLENS.ImagePanorama( './asset/pano_vr1.jpg' );
+panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
+
+var targetPos = getVectorFromAngle(95, 0, 4000)
+infospot = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+infospot.position.copy(targetPos) ;
+infospot.addHoverElement( document.getElementById( 'desc-container' ), 200 );
+
+panorama.add(infospot);
 
 viewer = new PANOLENS.Viewer( { cameraFov : 60 } );
 viewer.add( panorama );
@@ -17,7 +24,7 @@ renderer = viewer.getRenderer();
 //scene.add( gridHelper );
 
 //camera rotate, lookAt
-let targetPos = getVectorFromAngle(50, -5, 2000)
+var targetPos = getVectorFromAngle(90, 5, 2000)
 viewer.tweenControlCenter(targetPos);
 
 panorama.addEventListener( 'click', function(){
