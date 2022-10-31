@@ -13,7 +13,7 @@ infospot.addHoverElement( document.getElementById( 'desc-container' ), 150 );
 
 panorama.add(infospot);
 
-viewer = new PANOLENS.Viewer( { cameraFov : 60 } );
+viewer = new PANOLENS.Viewer( { cameraFov : 80 } );
 viewer.add( panorama );
 
 camera = viewer.getCamera();
@@ -24,7 +24,7 @@ renderer = viewer.getRenderer();
 //scene.add( gridHelper );
 
 //camera rotate, lookAt
-var targetPos = getVectorFromAngle(90, 5, 2000)
+var targetPos = getVectorFromAngle(95, 20, 2000)
 viewer.tweenControlCenter(targetPos);
 
 panorama.addEventListener( 'click', function(){
