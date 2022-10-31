@@ -17,8 +17,8 @@ camera = viewer.getCamera();
 scene = viewer.getScene();
 renderer = viewer.getRenderer();
 
-var gridHelper = new THREE.GridHelper( 20, 20, '#adff2f', '#ff7f50' );
-scene.add( gridHelper );
+//var gridHelper = new THREE.GridHelper( 20, 20, '#adff2f', '#ff7f50' );
+//scene.add( gridHelper );
 
 //camera rotate, lookAt
 let targetPos = getVectorFromAngle(40, 0, 2000)
