@@ -14,7 +14,7 @@ h3 { text-align: center; }
 
 #desc-container {
     position: absolute;
-    width: 80%;
+    width: 350px;
     left: 50%;
     bottom: 0px;
     transform: translate(-50%,-10%);
@@ -24,4 +24,20 @@ h3 { text-align: center; }
     padding : 10px;
     color: #000;
     border-radius: 3px;
+}
+
+@media (max-width: 480px) {
+    #desc-container {
+        position: absolute;
+        width: 80%;
+        left: 50%;
+        bottom: 0px;
+        transform: translate(-50%,-10%);
+        border: none;
+        background: #fff;
+        opacity: 0.8;
+        padding : 10px;
+        color: #000;
+        border-radius: 3px;
+    }
 }

@@ -1,7 +1,12 @@
-function setViewInfoBox() {
-  if (document.getElementById("desc-container").style.display == 'inline') {
-    document.getElementById("desc-container").style.display = 'none';
-    console.log('disapear');
+window.onload = function() {
+  var el = document.getElementById("desc-container");
+  el.onclick = toggleInfoBox;
+}
+
+function toggleInfoBox() {
+  const infobox = document.getElementById('desc-container');
+  if (infobox.style.display == 'inline') {
+    infobox.style.display = 'none';
   }
 }
 
