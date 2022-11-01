@@ -14,7 +14,7 @@ h3 { text-align: center; }
 
 #desc-container {
     position: absolute;
-    width: 350px;
+    width: 500px;
     left: 50%;
     bottom: 0px;
     transform: translate(-50%,-10%);

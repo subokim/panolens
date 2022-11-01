@@ -33,6 +33,7 @@ panorama.addEventListener( 'click', function(){
 viewer = new PANOLENS.Viewer( { container: container, cameraFov : 70 } );
 viewer.add( panorama );
 
+viewer.enableReticle = true;
 camera = viewer.getCamera();
 scene = viewer.getScene();
 renderer = viewer.getRenderer();
@@ -43,3 +44,4 @@ renderer = viewer.getRenderer();
 //camera rotate, lookAt
 var targetPos = getVectorFromAngle(95, 0, 2000)
 viewer.tweenControlCenterByObject(infospot, 0);
+
