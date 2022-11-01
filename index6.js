@@ -1,3 +1,10 @@
+function setViewInfoBox() {
+  if (document.getElementById("desc-container").style.display == 'inline') {
+    document.getElementById("desc-container").style.display = 'none';
+    console.log('disapear');
+  }
+}
+
 var panorama, viewer, scene, camera;
 
 // Get Google Map API Key - https://developers.google.com/maps/documentation/javascript/get-api-key
@@ -6,14 +13,19 @@ var panorama, viewer, scene, camera;
 //panorama = new PANOLENS.GoogleStreetviewPanorama('MbYbdJhoZNcXA3Fo5d3wUA');
 panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
 
-var targetPos = getVectorFromAngle(95, 0, 4000)
+//var targetPos = getVectorFromAngle(95, 0, 4000)
 infospot = new PANOLENS.Infospot( 250, PANOLENS.DataImage.Info );
-infospot.position.copy(targetPos) ;
-infospot.addHoverElement( document.getElementById( 'desc-container' ), 150 );
+infospot.position.copy(getVectorFromAngle(95, 0, 4000)) ;
+infospot.addEventListener( 'click', function(){
+  document.getElementById("desc-container").style.display = 'inline';
+});
 
 panorama.add(infospot);
+panorama.addEventListener( 'click', function(){
+  //camera.getWorldDirection(v);
+});
 
-viewer = new PANOLENS.Viewer( { cameraFov : 80 } );
+viewer = new PANOLENS.Viewer( { container: container, cameraFov : 70 } );
 viewer.add( panorama );
 
 camera = viewer.getCamera();
@@ -24,13 +36,5 @@ renderer = viewer.getRenderer();
 //scene.add( gridHelper );
 
 //camera rotate, lookAt
-var targetPos = getVectorFromAngle(95, 20, 2000)
-viewer.tweenControlCenter(targetPos);
-
-panorama.addEventListener( 'click', function(){
-  //camera.getWorldDirection(v);
-  //const h_angle = THREE.Math.radToDeg( Math.atan2(v.x,v.z) );
-  //const v_angle = THREE.Math.radToDeg( Math.atan2(v.y,v.x) );
-  //console.log("vector=", offset);
-  //console.log("h_angle=", h_angle, ", v_angle=", v_angle);
-});
+var targetPos = getVectorFromAngle(95, 0, 2000)
+viewer.tweenControlCenterByObject(infospot, 0);
