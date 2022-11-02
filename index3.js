@@ -23,6 +23,3 @@ renderer = viewer.getRenderer();
 //camera rotate, lookAt
 let targetPos = getVectorFromAngle(40, 0, 2000)
 viewer.tweenControlCenter(targetPos);
-
-viewer.addUpdateCallback(function(){  
-});
