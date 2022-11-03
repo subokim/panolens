@@ -31,7 +31,7 @@ html, body {
 .desc_container {
     text-align: center;
     pointer-events: none;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .desc_container header {
@@ -49,14 +49,14 @@ html, body {
 @media (max-width: 800px) {
     .desc_container header {
         font-family: 'Oswald', sans-serif;
-        font-size: 2.4em;
-        font-weight: 200;
+        font-size: 2em;
+        font-weight: 180;
     }
     
     .desc_container article {
         font-family: 'Noto Serif KR', sans-serif;
-        font-size: 2 em;
-        font-weight: 150;
+        font-size: 1.5em;
+        font-weight: 100;
     }
     
 }
