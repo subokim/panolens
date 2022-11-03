@@ -16,15 +16,12 @@ html, body {
 
 .desc_container {
     position: absolute;
-    width: 100%;
-    max-width: 1000px;
-    padding: 20px;
-    max-height: 80%;
-    color: #fff;
     margin: auto;
-    left: 0;
-    right: 0;
-    top: 40%;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    top : 50%;
+    transform: translate(0, -50%);
     -webkit-transition: opacity 0.5s ease-out;
             -o-transition: opacity 0.5s ease-out;
             transition: opacity 0.5s ease-out;
@@ -37,4 +34,14 @@ html, body {
     font-weight: 300;
     pointer-events: none;
     letter-spacing: 2px;
+}
+
+@media (max-width: 480px) {
+    .desc_container {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 100;
+        pointer-events: none;
+        letter-spacing: 1px;
+    }
 }
