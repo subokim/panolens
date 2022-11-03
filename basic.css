@@ -29,7 +29,7 @@ html, body {
             -o-transition: opacity 0.5s ease-out;
             transition: opacity 0.5s ease-out;
 
-  }
+}
 
 .desc_container {
     text-align: center;
@@ -37,4 +37,4 @@ html, body {
     font-weight: 300;
     pointer-events: none;
     letter-spacing: 2px;
-  }
+}
