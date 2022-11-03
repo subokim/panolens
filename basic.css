@@ -3,7 +3,6 @@ html, body {
     height: 100%;
     overflow: hidden;
     margin: 0;
-    font-family: 'Oswald', 'Roboto', sans-serif;
     overflow: hidden;
     background-color: #000;
     -webkit-font-smoothing: antialiased;
@@ -21,7 +20,8 @@ html, body {
     padding: 20px;
     color: #fff;
     top : 50%;
-    transform: translate(0, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     -webkit-transition: opacity 0.5s ease-out;
             -o-transition: opacity 0.5s ease-out;
             transition: opacity 0.5s ease-out;
@@ -30,18 +30,33 @@ html, body {
 
 .desc_container {
     text-align: center;
-    font-size: 4em;
-    font-weight: 300;
     pointer-events: none;
     letter-spacing: 2px;
 }
 
-@media (max-width: 480px) {
-    .desc_container {
-        text-align: center;
-        font-size: 2em;
+.desc_container header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.2em;
+    font-weight: 200;
+}
+
+.desc_container article {
+    font-family: 'Noto Serif KR', sans-serif;
+    font-size: 2.2em;
+    font-weight: 150;
+}
+
+@media (max-width: 800px) {
+    .desc_container header {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2.4em;
         font-weight: 200;
-        pointer-events: none;
-        letter-spacing: 1px;
     }
+    
+    .desc_container article {
+        font-family: 'Noto Serif KR', sans-serif;
+        font-size: 2 em;
+        font-weight: 150;
+    }
+    
 }
