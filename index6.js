@@ -1,5 +1,5 @@
 var panorama, viewer, scene, camera, renderer, controls ;
-var infobox, infotitle, infodesc, infotext;
+var infobox, infotitle, infodesc, infotext, bar;
 var infospot, targetpos;
 
 infotext = [
@@ -30,6 +30,7 @@ infotext = [
           '서재의 첫방은 서일방이고, 나머지는 동재와 같았다. 제일 끝방을 하재라 불렀다.'}
 ];
 
+bar = document.querySelector( '#bar' );
 infobox = document.getElementById("infobox");
 infotitle = document.getElementById("infotitle");
 infodesc = document.getElementById("infodesc");
@@ -58,11 +59,23 @@ function addInfoSpot(pano, x_angle, y_angle, radius, infoid) {
   pano.add(infospot);
 }
 
+function onProgressUpdate ( event ) {
+  var percentage = event.progress.loaded/ event.progress.total * 100;
+  bar.style.width = percentage + "%";
+  if (percentage >= 100){
+    bar.classList.add( 'hide' );
+    setTimeout(function(){
+      bar.style.width = 0;
+    }, 1000);
+  }
+}
+
 // Get Google Map API Key - https://developers.google.com/maps/documentation/javascript/get-api-key
 //panorama = new PANOLENS.GoogleStreetviewPanorama( 'JmSoPsBPhqWvaBmOqfFzgA', 0 );
 //,'AIzaSyAP7psgb_3x6cGqMDSQETHk7qZ7fCBYy0I'
 //panorama = new PANOLENS.GoogleStreetviewPanorama('MbYbdJhoZNcXA3Fo5d3wUA');
 panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
+panorama.addEventListener( 'progress', onProgressUpdate );
 
 addInfoSpot(panorama, 95, 0, 4000, 0);
 addInfoSpot(panorama, -5, 0, 4000, 1);
