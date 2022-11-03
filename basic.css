@@ -8,12 +8,25 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
+a:link, a:visited {
+    color: #bdc3c7;
+}
+
+.credit {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    color: #fff;
+}
+
+
 #container {
     width: 100%;
     height: 100%;
 }
 
-.desc_container {
+.title {
     position: absolute;
     margin: auto;
     width: 100%;
@@ -28,33 +41,33 @@ html, body {
 
 }
 
-.desc_container {
+.title {
     text-align: center;
     pointer-events: none;
     letter-spacing: 1px;
 }
 
-.desc_container header {
+.title header {
     font-family: 'Oswald', sans-serif;
     font-size: 3.2em;
     font-weight: 200;
 }
 
-.desc_container article {
-    font-family: 'Noto Serif KR', sans-serif;
+.title article {
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 2.2em;
     font-weight: 150;
 }
 
 @media (max-width: 800px) {
-    .desc_container header {
+    .title header {
         font-family: 'Oswald', sans-serif;
         font-size: 2em;
         font-weight: 180;
     }
     
-    .desc_container article {
-        font-family: 'Noto Serif KR', sans-serif;
+    .title article {
+        font-family: 'Noto Sans KR', sans-serif;
         font-size: 1.5em;
         font-weight: 100;
     }

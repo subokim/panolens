@@ -40,12 +40,11 @@ function setInfospot(ha, va, radius, linkPanorama) {
     infospot.position.x = targetPos.x;
     infospot.position.y = targetPos.y;
     infospot.position.z = targetPos.z;  
-    console.log("infospot =", infospot.position);
-  
+
     infospot.addHoverText( "Enter" );
-    infospot.addEventListener( 'click', function(){
+    infospot.addEventListener('click', function(){
       viewer.setPanorama( linkPanorama );
-    } );
+    });
   
     return infospot;
   }

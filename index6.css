@@ -5,8 +5,6 @@ html, body {
     margin: 0;
 }
 
-h3 { text-align: center; }
-
 #progress {
     width: 0;
     height: 5px;
@@ -17,12 +15,45 @@ h3 { text-align: center; }
     transition: opacity 0.5s ease;
 }
 
+.title {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    top : 10%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    -webkit-transition: opacity 0.5s ease-out;
+            -o-transition: opacity 0.5s ease-out;
+            transition: opacity 0.5s ease-out;
+
+}
+
+.title {
+    text-align: center;
+    pointer-events: none;
+    letter-spacing: 1px;
+}
+
+.title header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.2em;
+    font-weight: 200;
+}
+
+.title article {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2.2em;
+    font-weight: 150;
+}
+
 #container {
     width: 100%;
     height: 100%;
 }
 
-#desc-container {
+#infobox {
     position: absolute;
     width: 500px;
     left: 50%;
@@ -30,14 +61,28 @@ h3 { text-align: center; }
     transform: translate(-50%,-10%);
     border: none;
     background: #fff;
-    opacity: 0.8;
+    opacity: 0.7;
     padding : 10px;
     color: #000;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
-@media (max-width: 480px) {
-    #desc-container {
+#infotitle { 
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-size : 1.8em;
+}
+
+#infodesc { 
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size : 1.2em;
+}
+
+
+@media (max-width: 800px) {
+    #infobox {
         position: absolute;
         width: 80%;
         left: 50%;
@@ -50,4 +95,29 @@ h3 { text-align: center; }
         color: #000;
         border-radius: 3px;
     }
+
+    #infotitle { 
+        text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: bold;
+        font-size : 1.2em;
+    }
+    
+    #infodesc { 
+        text-align: left;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size : 1em;
+    }
+
+    .title header {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2em;
+        font-weight: 180;
+    }
+    
+    .title article {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 1.5em;
+        font-weight: 100;
+    }    
 }

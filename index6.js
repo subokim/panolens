@@ -13,9 +13,9 @@ infotext = [
     desc: '가을이 오니 느티나무의 단풍도 깊어진다.'}
 ];
 
-infobox = document.getElementById("desc-container");
-infotitle = document.getElementById("title");
-infodesc = document.getElementById("description");
+infobox = document.getElementById("infobox");
+infotitle = document.getElementById("infotitle");
+infodesc = document.getElementById("infodesc");
 
 
 function toggleInfoBox(visible) {

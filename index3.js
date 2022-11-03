@@ -8,7 +8,8 @@ panorama2 = new PANOLENS.ImagePanorama('asset/pano-vr2.jpg');
 //panorama = new PANOLENS.GoogleStreetviewPanorama('8VRQVMxTcxwTvaa7T7jktA');
 //panorama2 = new PANOLENS.GoogleStreetviewPanorama('EoRzuVjoP8ft_wF6A9pyxQ');
 
-panorama.add( setInfospot(-40, 0, 100, panorama2)) ;
+infospot = setInfospot(-40, 0, 100, panorama2);
+panorama.add(infospot) ;
 
 viewer = new PANOLENS.Viewer( { container: container } );
 viewer.add( panorama, panorama2 );
