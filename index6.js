@@ -1,6 +1,6 @@
 var panorama, viewer, scene, camera, renderer, controls ;
 var infobox, infotitle, infodesc, infotext;
-var infospot1, infospot2, targetPos;
+var infospot1, infospot2, targetpos;
 
 infotext = [
   { id: 1,
@@ -16,6 +16,7 @@ infotext = [
 infobox = document.getElementById("desc-container");
 infotitle = document.getElementById("title");
 infodesc = document.getElementById("description");
+
 
 function toggleInfoBox(visible) {
   if(visible) {
@@ -36,24 +37,24 @@ function showInfoText( infoid ) {
 //panorama = new PANOLENS.GoogleStreetviewPanorama('MbYbdJhoZNcXA3Fo5d3wUA');
 panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
 
-targetPos = getVectorFromAngle(95, 0, 4000)
+targetpos = getVectorFromAngle(95, 0, 4000)
 infospot1 = new PANOLENS.Infospot( 250, PANOLENS.DataImage.Info );
-infospot1.position.copy(targetPos);
+infospot1.position.copy(targetpos);
 infospot1.addEventListener( 'click', function() {
   toggleInfoBox(true);
   showInfoText(0);
 });
 panorama.add(infospot1);
 
-targetPos = getVectorFromAngle(-5, 0, 4000)
+targetpos = getVectorFromAngle(-5, 0, 4000)
 infospot2 = new PANOLENS.Infospot( 250, PANOLENS.DataImage.Info );
-infospot2.position.copy(targetPos);
+infospot2.position.copy(targetpos);
 infospot2.addEventListener( 'click', function() {
   toggleInfoBox(true);
   showInfoText(1);
 });
 panorama.add(infospot2);
-
+//panorama.addEventListener( 'progress', onProgress );
 panorama.addEventListener( 'click', function(){
   //camera.getWorldDirection(v);
 });
@@ -70,7 +71,7 @@ controls = viewer.getControl();
 //scene.add( gridHelper );
 
 //camera rotate, lookAt
-//targetPos = getVectorFromAngle(10, 0, 2000)
+//targetpos = getVectorFromAngle(10, 0, 2000)
 viewer.tweenControlCenterByObject(infospot1, 0);
 
 controls.addEventListener( 'change', function() {

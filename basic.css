@@ -3,41 +3,38 @@ html, body {
     height: 100%;
     overflow: hidden;
     margin: 0;
+    font-family: 'Oswald', 'Roboto', sans-serif;
+    overflow: hidden;
+    background-color: #000;
+    -webkit-font-smoothing: antialiased;
 }
-
-h3 { text-align: center; }
 
 #container {
     width: 100%;
     height: 100%;
 }
 
-#desc-container {
+.desc_container {
     position: absolute;
-    width: 500px;
-    left: 50%;
-    bottom: 0px;
-    transform: translate(-50%,-10%);
-    border: none;
-    background: #fff;
-    opacity: 0.8;
-    padding : 10px;
-    color: #000;
-    border-radius: 3px;
-}
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    max-height: 80%;
+    color: #fff;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 40%;
+    -webkit-transition: opacity 0.5s ease-out;
+            -o-transition: opacity 0.5s ease-out;
+            transition: opacity 0.5s ease-out;
 
-@media (max-width: 480px) {
-    #desc-container {
-        position: absolute;
-        width: 80%;
-        left: 50%;
-        bottom: 0px;
-        transform: translate(-50%,-10%);
-        border: none;
-        background: #fff;
-        opacity: 0.8;
-        padding : 10px;
-        color: #000;
-        border-radius: 3px;
-    }
-}
+  }
+
+.desc_container {
+    text-align: center;
+    font-size: 4em;
+    font-weight: 300;
+    pointer-events: none;
+    letter-spacing: 2px;
+  }

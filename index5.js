@@ -1,12 +1,14 @@
-var panorama, viewer, scene, camera;
+var container, panorama, viewer, scene, camera;
 
 // Get Google Map API Key - https://developers.google.com/maps/documentation/javascript/get-api-key
 //panorama = new PANOLENS.GoogleStreetviewPanorama( 'JmSoPsBPhqWvaBmOqfFzgA', 0 );
 //,'AIzaSyAP7psgb_3x6cGqMDSQETHk7qZ7fCBYy0I'
 //panorama = new PANOLENS.GoogleStreetviewPanorama('MbYbdJhoZNcXA3Fo5d3wUA');
+
+container = document.querySelector( '#container' );
 panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
 
-viewer = new PANOLENS.Viewer( { cameraFov : 60 } );
+viewer = new PANOLENS.Viewer( { container: container, cameraFov : 60 } );
 viewer.add( panorama );
 
 camera = viewer.getCamera();
