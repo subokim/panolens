@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+  <title>Toggle 3 Scenes</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Oswald&display=swap" rel="stylesheet">
-  <title>Hotspot Information</title>
-  <link rel=stylesheet href="index6.css">
+  <link rel=stylesheet href="common.css">
   <script src="./js/three.js"></script>
   <script src="./js/panolens.min.js"></script>
-  <script src="./js/panocontroller.js"></script>
 </head>
 <body>
     <div id="progress">
-      <div id="bar"></div>
+        <div id="bar"></div>
     </div>
     <div class="title">
-      <header>Hotspot Info</header>
-      <article>Click the icon</article>
+      <header>Panorama Toggle</header>
+      <article>Three Scenes Change</article>
     </div>
     <div id="container"></div>
-    <div id="infobox" style="display: none;" onclick="toggleInfoBox(false);">
-      <p id="infotitle">제목행</p><p id="infodesc">정보내용</p>
-    </div>
-    <script src="index6.js"></script>
+    <button id="btn1">Panorama1</button>
+    <button id="btn2">Panorama2</button>
+    <button id="btn3">Panorama3</button>
+  <script src="pano2.js"></script>
 </body>
 </html>

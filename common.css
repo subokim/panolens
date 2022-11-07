@@ -3,6 +3,21 @@ html, body {
     height: 100%;
     overflow: hidden;
     margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    -webkit-font-smoothing: antialiased;
+}
+
+a:link, a:visited {
+    color: #bdc3c7;
+}
+
+.credit {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    color: #fff;
 }
 
 #progress {
@@ -15,13 +30,17 @@ html, body {
     background-color: #fff;
     height: 100%;
     transition: width 0.1s ease;
-    }
+}
 
 #bar.hide {
     opacity: 0;
     transition: opacity 1s ease;
 }
 
+#container {
+    width: 100%;
+    height: 100%;
+}
 
 .title {
     position: absolute;
@@ -29,13 +48,12 @@ html, body {
     width: 100%;
     padding: 20px;
     color: #fff;
-    top : 10%;
+    top : 50%;
     left: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -50%);
     -webkit-transition: opacity 0.5s ease-out;
             -o-transition: opacity 0.5s ease-out;
             transition: opacity 0.5s ease-out;
-
 }
 
 .title {
@@ -56,40 +74,66 @@ html, body {
     font-weight: 150;
 }
 
-#container {
-    width: 100%;
-    height: 100%;
+button {
+    position: absolute;
+    top: 5px;
+    width: 100px;
+    height: 30px;
+}
+  
+#btn1 {
+left: 5px;
+}
+  
+#btn2 {
+left: 110px;
+}
+
+#btn3 {
+left: 215px;
 }
 
 #infobox {
     position: absolute;
-    width: 500px;
+    width: 550px;
     left: 50%;
     bottom: 0px;
     transform: translate(-50%,-10%);
     border: none;
     background: #fff;
     opacity: 0.7;
-    padding : 10px;
     color: #000;
     border-radius: 5px;
 }
 
-#infotitle { 
+#infobox #infotitle { 
     text-align: center;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     font-size : 1.8em;
+    line-height: 15px;
 }
 
-#infodesc { 
+#infobox #infodesc { 
     text-align: left;
     font-family: 'Noto Sans KR', sans-serif;
     font-size : 1.2em;
+    padding: 0 10px 0 10px;
 }
 
-
 @media (max-width: 800px) {
+    .title header {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2em;
+        font-weight: 180;
+    }
+    
+    .title article {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 1.5em;
+        font-weight: 100;
+    }
+
     #infobox {
         position: absolute;
         width: 80%;
@@ -104,28 +148,19 @@ html, body {
         border-radius: 3px;
     }
 
-    #infotitle { 
+    #infobox #infotitle { 
         text-align: center;
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: bold;
         font-size : 1.2em;
+        line-height: 12px;
     }
     
-    #infodesc { 
+    #infobox #infodesc { 
         text-align: left;
         font-family: 'Noto Sans KR', sans-serif;
         font-size : 1em;
     }
 
-    .title header {
-        font-family: 'Oswald', sans-serif;
-        font-size: 2em;
-        font-weight: 180;
-    }
     
-    .title article {
-        font-family: 'Noto Sans KR', sans-serif;
-        font-size: 1.5em;
-        font-weight: 100;
-    }    
 }
