@@ -5,9 +5,15 @@
 		<title>Panorama Tour Sample</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
     <body>
+        <div>
+            <a href="#" onclick="toggleSideBar()">
+                <span class="material-symbols-outlined">apps</span>
+            </a>
+        </div>
         <div id="panel">
             <div id="header"><h1>Pano Tour Sample</h1></div>
             <div id="contentWrapper">
@@ -52,15 +58,6 @@
             </div>
         </div>
         <iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;" src="pano6.html"></iframe>
-        <script>
-            let cardlist = document.getElementsByClassName("card");
-            let selected = 0;
-
-            function selectCard(id) {
-                if ( selected !== null ) cardlist[selected].classList.remove( 'selected' );
-                selected = id;
-                cardlist[id].classList.add( 'selected' );
-            }
-        </script>
+        <script src="index.js"></script>
     </body>
 </html>
