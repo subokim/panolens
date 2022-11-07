@@ -100,8 +100,9 @@ controls = viewer.getControl();
 //scene.add( gridHelper );
 
 //camera rotate, lookAt
-targetpos = getVectorFromAngle(0, 0, 2000)
+targetpos = getVectorFromAngle(90, -5, 2000)
 viewer.tweenControlCenter(targetpos, 0);
+viewer.update();
 
 controls.addEventListener( 'change', function() {
   toggleInfoBox(false);
