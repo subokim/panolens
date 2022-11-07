@@ -137,8 +137,8 @@ iframe {
 
 @media ( max-width: 800px ) {
 	:root {
-		--panel-width: 150px;
-		--panel-padding: 3px;
+		--panel-width: 200px;
+		--panel-padding: 8px;
 
 		--font-size: 12px;
 		--line-height: 16px;
