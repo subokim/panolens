@@ -1,5 +1,18 @@
 var panorama, panorama2, viewer, container, infospot, camera, scene, renderer;
 
+bar = document.querySelector( '#bar' );
+
+function onProgressUpdate ( event ) {
+    var percentage = event.progress.loaded/ event.progress.total * 100;
+    bar.style.width = percentage + "%";
+    if (percentage >= 100){
+      bar.classList.add( 'hide' );
+      setTimeout(function(){
+        bar.style.width = 0;
+      }, 1000);
+    }
+  }
+
 container = document.querySelector( '#container' );
 
 panorama = new PANOLENS.ImagePanorama('asset/pano-vr1.jpg');

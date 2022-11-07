@@ -4,6 +4,19 @@ var container, panorama, viewer, scene, camera;
 //panorama = new PANOLENS.GoogleStreetviewPanorama( 'JmSoPsBPhqWvaBmOqfFzgA', 0 );
 //,'AIzaSyAP7psgb_3x6cGqMDSQETHk7qZ7fCBYy0I'
 
+bar = document.querySelector( '#bar' );
+
+function onProgressUpdate ( event ) {
+  var percentage = event.progress.loaded/ event.progress.total * 100;
+  bar.style.width = percentage + "%";
+  if (percentage >= 100){
+    bar.classList.add( 'hide' );
+    setTimeout(function(){
+      bar.style.width = 0;
+    }, 1000);
+  }
+}
+
 container = document.querySelector( '#container' );
 //panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
 panorama = new PANOLENS.GoogleStreetviewPanorama('EybxZg5Wo6LIbhreS6JBtQ');
