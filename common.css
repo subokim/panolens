@@ -82,15 +82,15 @@ button {
 }
   
 #btn1 {
-left: 5px;
+    left: 40px;
 }
   
 #btn2 {
-left: 110px;
+    left: 145px;
 }
 
 #btn3 {
-left: 215px;
+    left: 250px;
 }
 
 #infobox {
