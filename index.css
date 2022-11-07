@@ -111,3 +111,31 @@ iframe {
 #viewer {
 	padding-left: var(--panel-width);
 }
+
+@media ( max-width: 800px ) {
+	:root {
+		--panel-width: 150px;
+		--panel-padding: 3px;
+
+		--font-size: 14px;
+		--line-height: 16px;
+
+		--header-height: 40px;
+		--border-style: 1px solid #E8E8E8;
+	}
+
+	h1 {
+		font-family: 'Noto Sans KR', sans-serif;
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: bolder;
+		text-align: center;
+		margin-left: var(--panel-padding);
+	}
+
+	#header {
+		width: 100%;
+		height: var(--header-height);
+		border-bottom: var(--border-style);
+	}
+}
