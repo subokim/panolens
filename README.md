@@ -1,5 +1,8 @@
+# Overview
+- 이 프로젝트는 2022.11.08일에 panove
+
 # panolens
-- 이 폴더는 panolens 를 테스트하기 위한 겁니다.
+- 이 프로젝트는 를 테스트하기 위한 겁니다.
 - angle To Vector 함수를 구현했습니다.
 
 ## panolens import 하기
